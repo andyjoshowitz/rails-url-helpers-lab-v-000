@@ -39,14 +39,14 @@ describe 'Show page' do
   end
 
   it 'renders the active status if the user is inactive' do
-    visit students_path(@student)
+    visit student_path(@student)
     expect(page).to have_content("This student is currently inactive.")
   end
 
   it 'renders the active status if the user is active' do
     @student.active = true
     @student.save
-    visit students_path(@student)
+    visit student_path(@student)
     expect(page).to have_content("This student is currently active.")
   end
 end
